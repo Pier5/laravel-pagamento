@@ -18,8 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/payment/make', 'PaymentsController@make')->name('payment.make');
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

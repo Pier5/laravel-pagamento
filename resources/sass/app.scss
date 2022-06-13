@@ -6,3 +6,11 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+
+.sticky-nav{
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 90;
+}
