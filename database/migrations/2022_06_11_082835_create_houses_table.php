@@ -18,6 +18,7 @@ class CreateHousesTable extends Migration
             $table->string('title');
             $table->string('address');
             $table->string('poster');
+            $table->integer('views')->default(0);
             $table->string('description');
             $table->timestamps();
         });

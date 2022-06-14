@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\House;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class HouseController extends Controller
 {
@@ -49,7 +50,11 @@ class HouseController extends Controller
      */
     public function show(House $house)
     {
-        //
+        $viewed = Session::get('viewed_pages', []);
+        if(!in_array($house->id, $viewed)){
+            $house->increment('views');
+            Session::push('viewed_pages', $house->id);
+        }
     }
 
     /**

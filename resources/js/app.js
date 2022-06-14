@@ -32,6 +32,7 @@ import Search from './components/Search.vue';
 import VueRouter from 'vue-router'
 import Vue from 'vue';
 import HousesIndex from './components/HousesIndex.vue';
+import HousesShow from './components/HousesShow.vue';
 import TomMap from './components/TomMap.vue';
 import VueObserveVisibility from 'vue-observe-visibility'
 import Vuex from 'vuex'
@@ -40,6 +41,7 @@ import Vuex from 'vuex'
 const routes = [
     { path: '/', component: HousesIndex },
     { path: '/map', component: TomMap },
+    { path: '/show/:id', component: HousesShow },
 ]
 
 const router = new VueRouter({

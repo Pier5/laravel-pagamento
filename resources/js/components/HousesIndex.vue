@@ -1,7 +1,7 @@
 <template>
   <div class="container py-5" id="infiniteScroll">
     <div class="row row-cols-4">
-        <div class="col" v-for="house in houses" :key="house.id">
+        <!-- <div class="col" v-for="house in houses" :key="house.id">
             <div class="card h-100">
                 <img :src="house.poster" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -12,7 +12,7 @@
                     <small class="text-muted">Last updated 3 mins ago</small>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div v-if="houses.length" v-observe-visibility="handleScrolledToBottom"></div>
     </div>

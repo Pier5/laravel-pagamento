@@ -9,7 +9,7 @@ $factory->define(House::class, function (Faker $faker) {
     return [
         'title' => $faker->sentence,
         'address' => $faker->address,
-        'poster' => "https://picsum.photos/200",
+        'poster' => 'https://picsum.photos/200/300?nocache='.microtime(),
         'description' => $faker->text,
     ];
 });
