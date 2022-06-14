@@ -48,13 +48,17 @@ class HouseController extends Controller
      * @param  \App\House  $house
      * @return \Illuminate\Http\Response
      */
-    public function show(House $house)
+    public function show($house)
     {
         $viewed = Session::get('viewed_pages', []);
+        // dd(House::find($house));
+        $house = House::find($house);
         if(!in_array($house->id, $viewed)){
             $house->increment('views');
             Session::push('viewed_pages', $house->id);
         }
+
+        return view('show');
     }
 
     /**
