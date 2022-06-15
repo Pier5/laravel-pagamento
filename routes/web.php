@@ -22,6 +22,7 @@ Route::get('/show/{id}', 'HouseController@show')->name('show');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/payment/make', 'PaymentsController@make')->name('payment.make');
 
 Route::get("{any?}", function() {
     return view("welcome");

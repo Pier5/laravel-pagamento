@@ -11,6 +11,7 @@
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://js.braintreegateway.com/web/dropin/1.33.2/js/dropin.js"></script>
 
         <!-- Styles -->
@@ -82,7 +83,13 @@
                         }, function (err, instance) {
                         button.addEventListener('click', function () {
                             instance.requestPaymentMethod(function (err, payload) {
-                            // Submit payload.nonce to your server
+                                $.get('{{ route('payment.make') }}', {payload}, function (response) {
+                                    if (response.success) {
+                                        alert('Pagamento accettato!');
+                                    } else {
+                                        alert('Pagamento respinto');
+                                    }
+                                })
                             });
                         })
                     });
